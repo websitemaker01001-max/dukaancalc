@@ -1,114 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
+<meta charset="UTF-8">
+
 <meta name="google-site-verification" content="6w1K1o4iIVWB8B4XYUOpC1fsd70rexgkS-fTAswaka4" />
-<title>DukaanCalc - Free Business Calculators for Shopkeepers</title>
+
+<title>DukaanCalc - Free Business Calculators</title>
+
+<meta name="description" content="DukaanCalc provides free business calculators including profit, GST, discount, selling price, EMI, percentage, interest, markup, break-even, salary and unit price calculators for shopkeepers and small businesses.">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f6f8;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+color:#111827;
 }
 
 .header{
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:25px 15px;
+background:#111827;
+color:white;
+text-align:center;
+padding:28px 15px;
 }
 
 .header h1{
-    margin:0;
-    font-size:30px;
+margin:0;
+font-size:30px;
 }
 
 .header p{
-    margin:8px 0 0;
+margin:8px 0 0;
+font-size:16px;
 }
 
 .container{
-    max-width:500px;
-    margin:20px auto;
-    padding:15px;
+max-width:600px;
+margin:20px auto;
+padding:15px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    margin-bottom:18px;
-    border-radius:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+background:white;
+padding:20px;
+margin-bottom:18px;
+border-radius:15px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-h2{
-    margin-top:0;
+.card h2{
+margin-top:0;
+font-size:21px;
 }
 
 label{
-    display:block;
-    margin-top:12px;
-    font-weight:bold;
+display:block;
+margin-top:12px;
+font-weight:bold;
 }
 
 input{
-    width:100%;
-    padding:12px;
-    margin-top:6px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
+width:100%;
+padding:12px;
+margin-top:6px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
 }
 
 button{
-    width:100%;
-    padding:13px;
-    margin-top:15px;
-    border:0;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
+width:100%;
+padding:13px;
+margin-top:15px;
+border:0;
+border-radius:8px;
+background:#2563eb;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
 }
 
 .result{
-    margin-top:15px;
-    padding:12px;
-    background:#f3f4f6;
-    border-radius:8px;
-    text-align:center;
-    line-height:1.7;
+margin-top:15px;
+padding:12px;
+background:#f3f4f6;
+border-radius:8px;
+text-align:center;
+line-height:1.7;
+font-weight:bold;
 }
 
 .footer{
-    text-align:center;
-    padding:20px;
-    color:#666;
-    font-size:13px;
+text-align:center;
+padding:25px 15px;
+color:#666;
+font-size:13px;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="header">
-    <h1>🧮 DukaanCalc</h1>
-    <p>Free Business Calculators</p>
+
+<h1>🧮 DukaanCalc</h1>
+
+<p>Free Business Calculators for Everyone</p>
+
 </div>
+
 
 <div class="container">
 
+
+<!-- PROFIT -->
+
 <div class="card">
+
 <h2>💰 Profit Calculator</h2>
 
 <label>खरीद कीमत (₹)</label>
+
 <input type="number" id="buy" placeholder="500">
 
 <label>बिक्री कीमत (₹)</label>
+
 <input type="number" id="sell" placeholder="650">
 
 <button onclick="profit()">Calculate Profit</button>
@@ -116,16 +147,22 @@ button{
 <div class="result" id="profitResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- DISCOUNT -->
+
 <div class="card">
+
 <h2>🏷️ Discount Calculator</h2>
 
 <label>Original Price (₹)</label>
+
 <input type="number" id="price" placeholder="1000">
 
 <label>Discount (%)</label>
+
 <input type="number" id="discount" placeholder="20">
 
 <button onclick="discountCalc()">Calculate Discount</button>
@@ -133,16 +170,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="discountResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- GST -->
+
 <div class="card">
+
 <h2>🧾 GST Calculator</h2>
 
 <label>Amount (₹)</label>
+
 <input type="number" id="amount" placeholder="1000">
 
 <label>GST (%)</label>
+
 <input type="number" id="gst" placeholder="18">
 
 <button onclick="gstCalc()">Calculate GST</button>
@@ -150,16 +193,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="gstResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- SELLING PRICE -->
+
 <div class="card">
+
 <h2>💵 Selling Price Calculator</h2>
 
 <label>Cost Price (₹)</label>
+
 <input type="number" id="cost" placeholder="500">
 
 <label>Desired Profit (%)</label>
+
 <input type="number" id="profitPercent" placeholder="20">
 
 <button onclick="sellingPrice()">Calculate Price</button>
@@ -167,16 +216,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="sellingResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- DAILY PROFIT -->
+
 <div class="card">
+
 <h2>📊 Daily Profit Calculator</h2>
 
 <label>Total Sales (₹)</label>
+
 <input type="number" id="sales" placeholder="5000">
 
 <label>Total Expenses (₹)</label>
+
 <input type="number" id="expenses" placeholder="3000">
 
 <button onclick="dailyProfit()">Calculate</button>
@@ -184,19 +239,26 @@ Result यहाँ दिखाई देगा
 <div class="result" id="dailyResult">
 Result यहाँ दिखाई देगा
 </div>
-</div>
 
 </div>
+
+
+<!-- EMI -->
+
 <div class="card">
+
 <h2>🏦 EMI Calculator</h2>
 
 <label>Loan Amount (₹)</label>
+
 <input type="number" id="loanAmount" placeholder="100000">
 
 <label>Interest Rate (% per year)</label>
+
 <input type="number" id="interestRate" placeholder="10">
 
 <label>Loan Tenure (Years)</label>
+
 <input type="number" id="loanYears" placeholder="5">
 
 <button onclick="calculateEMI()">Calculate EMI</button>
@@ -204,17 +266,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="emiResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
-<!-- MORE CALCULATORS -->
+
+<!-- PERCENTAGE -->
 
 <div class="card">
+
 <h2>📊 Percentage Calculator</h2>
 
 <label>Number</label>
+
 <input type="number" id="percentNumber" placeholder="500">
 
 <label>Percentage (%)</label>
+
 <input type="number" id="percentValue" placeholder="20">
 
 <button onclick="calcPercentage()">Calculate</button>
@@ -222,16 +289,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="percentResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- PERCENTAGE CHANGE -->
+
 <div class="card">
+
 <h2>📈 Percentage Increase / Decrease</h2>
 
 <label>Original Value</label>
+
 <input type="number" id="oldValue" placeholder="100">
 
 <label>New Value</label>
+
 <input type="number" id="newValue" placeholder="120">
 
 <button onclick="calcChange()">Calculate</button>
@@ -239,13 +312,18 @@ Result यहाँ दिखाई देगा
 <div class="result" id="changeResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- AVERAGE -->
+
 <div class="card">
+
 <h2>🔢 Average Calculator</h2>
 
 <label>Numbers (comma separated)</label>
+
 <input type="text" id="averageNumbers" placeholder="10,20,30,40">
 
 <button onclick="calcAverage()">Calculate Average</button>
@@ -253,19 +331,26 @@ Result यहाँ दिखाई देगा
 <div class="result" id="averageResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- SIMPLE INTEREST -->
+
 <div class="card">
+
 <h2>💰 Simple Interest Calculator</h2>
 
 <label>Principal (₹)</label>
+
 <input type="number" id="siPrincipal" placeholder="10000">
 
 <label>Rate (% per year)</label>
+
 <input type="number" id="siRate" placeholder="10">
 
 <label>Time (Years)</label>
+
 <input type="number" id="siTime" placeholder="2">
 
 <button onclick="calcSI()">Calculate Interest</button>
@@ -273,16 +358,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="siResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- MARKUP -->
+
 <div class="card">
+
 <h2>📦 Markup Calculator</h2>
 
 <label>Cost Price (₹)</label>
+
 <input type="number" id="markupCost" placeholder="500">
 
 <label>Markup (%)</label>
+
 <input type="number" id="markupPercent" placeholder="20">
 
 <button onclick="calcMarkup()">Calculate</button>
@@ -290,16 +381,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="markupResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- GST INCLUSIVE -->
+
 <div class="card">
+
 <h2>🧾 GST Inclusive / Exclusive</h2>
 
-<label>Amount (₹)</label>
+<label>Final Amount Including GST (₹)</label>
+
 <input type="number" id="gstAmount" placeholder="1180">
 
 <label>GST (%)</label>
+
 <input type="number" id="gstRate" placeholder="18">
 
 <button onclick="calcGSTExclusive()">Calculate</button>
@@ -307,19 +404,26 @@ Result यहाँ दिखाई देगा
 <div class="result" id="gstExclusiveResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- LOAN INTEREST -->
+
 <div class="card">
+
 <h2>💳 Loan Interest Calculator</h2>
 
 <label>Loan Amount (₹)</label>
+
 <input type="number" id="loanInterestAmount" placeholder="100000">
 
 <label>Interest Rate (%)</label>
+
 <input type="number" id="loanInterestRate" placeholder="10">
 
 <label>Time (Years)</label>
+
 <input type="number" id="loanInterestYears" placeholder="5">
 
 <button onclick="calcLoanInterest()">Calculate</button>
@@ -327,19 +431,26 @@ Result यहाँ दिखाई देगा
 <div class="result" id="loanInterestResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- BREAK EVEN -->
+
 <div class="card">
+
 <h2>🛒 Break-even Calculator</h2>
 
 <label>Fixed Cost (₹)</label>
+
 <input type="number" id="fixedCost" placeholder="10000">
 
 <label>Selling Price per Unit (₹)</label>
+
 <input type="number" id="unitSellingPrice" placeholder="100">
 
 <label>Variable Cost per Unit (₹)</label>
+
 <input type="number" id="unitVariableCost" placeholder="60">
 
 <button onclick="calcBreakEven()">Calculate</button>
@@ -347,16 +458,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="breakEvenResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- SALARY -->
+
 <div class="card">
+
 <h2>💵 Salary Calculator</h2>
 
 <label>Monthly Salary (₹)</label>
+
 <input type="number" id="monthlySalary" placeholder="30000">
 
 <label>Working Days</label>
+
 <input type="number" id="workingDays" placeholder="26">
 
 <button onclick="calcSalary()">Calculate</button>
@@ -364,16 +481,22 @@ Result यहाँ दिखाई देगा
 <div class="result" id="salaryResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
 
 
+<!-- UNIT PRICE -->
+
 <div class="card">
+
 <h2>📏 Unit Price Calculator</h2>
 
 <label>Total Price (₹)</label>
+
 <input type="number" id="totalPrice" placeholder="500">
 
 <label>Quantity</label>
+
 <input type="number" id="quantity" placeholder="10">
 
 <button onclick="calcUnitPrice()">Calculate</button>
@@ -381,52 +504,36 @@ Result यहाँ दिखाई देगा
 <div class="result" id="unitPriceResult">
 Result यहाँ दिखाई देगा
 </div>
+
 </div>
+
+
+</div>
+
+
 <div class="footer">
+
 © 2026 DukaanCalc | Free Business Tools
+
 </div>
 
 
 <script>
-function calculateEMI() {
-    var loan = Number(document.getElementById("loanAmount").value);
-    var rate = Number(document.getElementById("interestRate").value);
-    var years = Number(document.getElementById("loanYears").value);
 
-    if (!loan || rate < 0 || !years) {
-        document.getElementById("emiResult").innerHTML =
-        "⚠️ कृपया सभी जानकारी भरें";
-        return;
-    }
 
-    var monthlyRate = rate / 12 / 100;
-    var months = years * 12;
-
-    var emi;
-
-    if (monthlyRate === 0) {
-        emi = loan / months;
-    } else {
-        emi = loan * monthlyRate * Math.pow(1 + monthlyRate, months) /
-        (Math.pow(1 + monthlyRate, months) - 1);
-    }
-
-    var totalPayment = emi * months;
-    var totalInterest = totalPayment - loan;
-
-    document.getElementById("emiResult").innerHTML =
-    "💰 Monthly EMI: ₹" + emi.toFixed(2) +
-    "<br>💵 Total Interest: ₹" + totalInterest.toFixed(2) +
-    "<br>💳 Total Payment: ₹" + totalPayment.toFixed(2);
-}
 function profit(){
 
 let buy=Number(document.getElementById("buy").value);
+
 let sell=Number(document.getElementById("sell").value);
 
 if(buy<=0 || sell<=0){
-document.getElementById("profitResult").innerHTML="⚠️ दोनों कीमतें डालें";
+
+document.getElementById("profitResult").innerHTML=
+"⚠️ दोनों कीमतें डालें";
+
 return;
+
 }
 
 let difference=sell-buy;
@@ -439,12 +546,16 @@ document.getElementById("profitResult").innerHTML=
 "✅ Profit: ₹"+difference.toFixed(2)+
 "<br>Margin: "+margin.toFixed(2)+"%";
 
-}else if(difference<0){
+}
+
+else if(difference<0){
 
 document.getElementById("profitResult").innerHTML=
 "❌ Loss: ₹"+Math.abs(difference).toFixed(2);
 
-}else{
+}
+
+else{
 
 document.getElementById("profitResult").innerHTML=
 "⚖️ No Profit, No Loss";
@@ -457,14 +568,20 @@ document.getElementById("profitResult").innerHTML=
 function discountCalc(){
 
 let price=Number(document.getElementById("price").value);
+
 let discount=Number(document.getElementById("discount").value);
 
 if(price<=0 || discount<0){
-document.getElementById("discountResult").innerHTML="⚠️ सही values डालें";
+
+document.getElementById("discountResult").innerHTML=
+"⚠️ सही values डालें";
+
 return;
+
 }
 
 let saved=price*discount/100;
+
 let finalPrice=price-saved;
 
 document.getElementById("discountResult").innerHTML=
@@ -477,14 +594,20 @@ document.getElementById("discountResult").innerHTML=
 function gstCalc(){
 
 let amount=Number(document.getElementById("amount").value);
+
 let gst=Number(document.getElementById("gst").value);
 
 if(amount<=0 || gst<0){
-document.getElementById("gstResult").innerHTML="⚠️ सही values डालें";
+
+document.getElementById("gstResult").innerHTML=
+"⚠️ सही values डालें";
+
 return;
+
 }
 
 let tax=amount*gst/100;
+
 let total=amount+tax;
 
 document.getElementById("gstResult").innerHTML=
@@ -497,14 +620,20 @@ document.getElementById("gstResult").innerHTML=
 function sellingPrice(){
 
 let cost=Number(document.getElementById("cost").value);
+
 let percent=Number(document.getElementById("profitPercent").value);
 
 if(cost<=0 || percent<0){
-document.getElementById("sellingResult").innerHTML="⚠️ सही values डालें";
+
+document.getElementById("sellingResult").innerHTML=
+"⚠️ सही values डालें";
+
 return;
+
 }
 
 let profit=cost*percent/100;
+
 let price=cost+profit;
 
 document.getElementById("sellingResult").innerHTML=
@@ -517,11 +646,16 @@ document.getElementById("sellingResult").innerHTML=
 function dailyProfit(){
 
 let sales=Number(document.getElementById("sales").value);
+
 let expenses=Number(document.getElementById("expenses").value);
 
 if(sales<0 || expenses<0){
-document.getElementById("dailyResult").innerHTML="⚠️ सही values डालें";
+
+document.getElementById("dailyResult").innerHTML=
+"⚠️ सही values डालें";
+
 return;
+
 }
 
 let profit=sales-expenses;
@@ -531,12 +665,16 @@ if(profit>0){
 document.getElementById("dailyResult").innerHTML=
 "✅ Daily Profit: ₹"+profit.toFixed(2);
 
-}else if(profit<0){
+}
+
+else if(profit<0){
 
 document.getElementById("dailyResult").innerHTML=
 "❌ Daily Loss: ₹"+Math.abs(profit).toFixed(2);
 
-}else{
+}
+
+else{
 
 document.getElementById("dailyResult").innerHTML=
 "⚖️ No Profit, No Loss";
@@ -545,8 +683,336 @@ document.getElementById("dailyResult").innerHTML=
 
 }
 
+
+function calculateEMI(){
+
+let loan=Number(document.getElementById("loanAmount").value);
+
+let rate=Number(document.getElementById("interestRate").value);
+
+let years=Number(document.getElementById("loanYears").value);
+
+if(loan<=0 || rate<0 || years<=0){
+
+document.getElementById("emiResult").innerHTML=
+"⚠️ कृपया सही जानकारी भरें";
+
+return;
+
+}
+
+let monthlyRate=rate/12/100;
+
+let months=years*12;
+
+let emi;
+
+if(monthlyRate===0){
+
+emi=loan/months;
+
+}
+
+else{
+
+emi=loan*monthlyRate*Math.pow(1+monthlyRate,months)/
+(Math.pow(1+monthlyRate,months)-1);
+
+}
+
+let totalPayment=emi*months;
+
+let totalInterest=totalPayment-loan;
+
+document.getElementById("emiResult").innerHTML=
+"💰 Monthly EMI: ₹"+emi.toFixed(2)+
+"<br>💵 Total Interest: ₹"+totalInterest.toFixed(2)+
+"<br>💳 Total Payment: ₹"+totalPayment.toFixed(2);
+
+}
+
+
+function calcPercentage(){
+
+let n=Number(document.getElementById("percentNumber").value);
+
+let p=Number(document.getElementById("percentValue").value);
+
+if(n<0 || p<0){
+
+document.getElementById("percentResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let result=n*p/100;
+
+document.getElementById("percentResult").innerHTML=
+p+"% of "+n+" = ₹"+result.toFixed(2);
+
+}
+
+
+function calcChange(){
+
+let oldV=Number(document.getElementById("oldValue").value);
+
+let newV=Number(document.getElementById("newValue").value);
+
+if(oldV<=0){
+
+document.getElementById("changeResult").innerHTML=
+"⚠️ सही value डालें";
+
+return;
+
+}
+
+let change=((newV-oldV)/oldV)*100;
+
+if(change>=0){
+
+document.getElementById("changeResult").innerHTML=
+"📈 Increase: "+change.toFixed(2)+"%";
+
+}
+
+else{
+
+document.getElementById("changeResult").innerHTML=
+"📉 Decrease: "+Math.abs(change).toFixed(2)+"%";
+
+}
+
+}
+
+
+function calcAverage(){
+
+let text=document.getElementById("averageNumbers").value;
+
+let nums=text.split(",")
+.map(function(x){
+return Number(x.trim());
+})
+.filter(function(x){
+return !isNaN(x);
+});
+
+if(nums.length===0){
+
+document.getElementById("averageResult").innerHTML=
+"⚠️ Numbers डालें";
+
+return;
+
+}
+
+let sum=nums.reduce(function(a,b){
+return a+b;
+},0);
+
+let avg=sum/nums.length;
+
+document.getElementById("averageResult").innerHTML=
+"🔢 Average: "+avg.toFixed(2);
+
+}
+
+
+function calcSI(){
+
+let p=Number(document.getElementById("siPrincipal").value);
+
+let r=Number(document.getElementById("siRate").value);
+
+let t=Number(document.getElementById("siTime").value);
+
+if(p<=0 || r<0 || t<=0){
+
+document.getElementById("siResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let interest=p*r*t/100;
+
+let total=p+interest;
+
+document.getElementById("siResult").innerHTML=
+"💰 Interest: ₹"+interest.toFixed(2)+
+"<br>💳 Total Amount: ₹"+total.toFixed(2);
+
+}
+
+
+function calcMarkup(){
+
+let cost=Number(document.getElementById("markupCost").value);
+
+let percent=Number(document.getElementById("markupPercent").value);
+
+if(cost<=0 || percent<0){
+
+document.getElementById("markupResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let markup=cost*percent/100;
+
+let selling=cost+markup;
+
+document.getElementById("markupResult").innerHTML=
+"📦 Markup: ₹"+markup.toFixed(2)+
+"<br>💰 Selling Price: ₹"+selling.toFixed(2);
+
+}
+
+
+function calcGSTExclusive(){
+
+let total=Number(document.getElementById("gstAmount").value);
+
+let rate=Number(document.getElementById("gstRate").value);
+
+if(total<=0 || rate<0){
+
+document.getElementById("gstExclusiveResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let base=total/(1+rate/100);
+
+let gst=total-base;
+
+document.getElementById("gstExclusiveResult").innerHTML=
+"💵 Original Amount: ₹"+base.toFixed(2)+
+"<br>🧾 GST: ₹"+gst.toFixed(2)+
+"<br>💰 Total: ₹"+total.toFixed(2);
+
+}
+
+
+function calcLoanInterest(){
+
+let amount=Number(document.getElementById("loanInterestAmount").value);
+
+let rate=Number(document.getElementById("loanInterestRate").value);
+
+let years=Number(document.getElementById("loanInterestYears").value);
+
+if(amount<=0 || rate<0 || years<=0){
+
+document.getElementById("loanInterestResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let interest=amount*rate*years/100;
+
+let total=amount+interest;
+
+document.getElementById("loanInterestResult").innerHTML=
+"💵 Interest: ₹"+interest.toFixed(2)+
+"<br>💳 Total Repayment: ₹"+total.toFixed(2);
+
+}
+
+
+function calcBreakEven(){
+
+let fixed=Number(document.getElementById("fixedCost").value);
+
+let selling=Number(document.getElementById("unitSellingPrice").value);
+
+let variable=Number(document.getElementById("unitVariableCost").value);
+
+if(fixed<0 || selling<=0 || variable<0){
+
+document.getElementById("breakEvenResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let contribution=selling-variable;
+
+if(contribution<=0){
+
+document.getElementById("breakEvenResult").innerHTML=
+"⚠️ Selling price variable cost से ज्यादा होना चाहिए";
+
+return;
+
+}
+
+let units=fixed/contribution;
+
+document.getElementById("breakEvenResult").innerHTML=
+"🛒 Break-even Units: "+Math.ceil(units);
+
+}
+
+
+function calcSalary(){
+
+let salary=Number(document.getElementById("monthlySalary").value);
+
+let days=Number(document.getElementById("workingDays").value);
+
+if(salary<=0 || days<=0){
+
+document.getElementById("salaryResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let daily=salary/days;
+
+document.getElementById("salaryResult").innerHTML=
+"💵 Daily Salary: ₹"+daily.toFixed(2);
+
+}
+
+
+function calcUnitPrice(){
+
+let price=Number(document.getElementById("totalPrice").value);
+
+let quantity=Number(document.getElementById("quantity").value);
+
+if(price<0 || quantity<=0){
+
+document.getElementById("unitPriceResult").innerHTML=
+"⚠️ सही values डालें";
+
+return;
+
+}
+
+let unit=price/quantity;
+
+document.getElementById("unitPriceResult").innerHTML=
+"📏 Price per Unit: ₹"+unit.toFixed(2);
+
+}
+
 </script>
 
 </body>
-  </html>
-<meta name="description" content="Free profit, GST, discount, selling price and daily profit calculators for shopkeepers and small businesses.">
+</html>
