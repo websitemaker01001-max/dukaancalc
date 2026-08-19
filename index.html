@@ -211,37 +211,36 @@ Result यहाँ दिखाई देगा
 
 
 <script>
-function calculateEMI(){
+function calculateEMI() {
+    var loan = Number(document.getElementById("loanAmount").value);
+    var rate = Number(document.getElementById("interestRate").value);
+    var years = Number(document.getElementById("loanYears").value);
 
-let P=Number(document.getElementById("loanAmount").value);
-let annualRate=Number(document.getElementById("interestRate").value);
-let years=Number(document.getElementById("loanYears").value);
+    if (!loan || rate < 0 || !years) {
+        document.getElementById("emiResult").innerHTML =
+        "⚠️ कृपया सभी जानकारी भरें";
+        return;
+    }
 
-if(P<=0 || annualRate<0 || years<=0){
-document.getElementById("emiResult").innerHTML=
-"⚠️ कृपया सही जानकारी भरें";
-return;
-}
+    var monthlyRate = rate / 12 / 100;
+    var months = years * 12;
 
-let R=annualRate/12/100;
-let N=years*12;
+    var emi;
 
-let emi;
+    if (monthlyRate === 0) {
+        emi = loan / months;
+    } else {
+        emi = loan * monthlyRate * Math.pow(1 + monthlyRate, months) /
+        (Math.pow(1 + monthlyRate, months) - 1);
+    }
 
-if(R===0){
-emi=P/N;
-}else{
-emi=P*R*Math.pow(1+R,N)/
-(Math.pow(1+R,N)-1);
-}
+    var totalPayment = emi * months;
+    var totalInterest = totalPayment - loan;
 
-let totalPayment=emi*N;
-let totalInterest=totalPayment-P;
-
-document.getElementById("emiResult").innerHTML=
-"💰 Monthly EMI: ₹"+emi.toFixed(2)+
-"<br>💵 Total Interest: ₹"+totalInterest.toFixed(2)+
-"<br>💳 Total Payment: ₹"+totalPayment.toFixed(2);
+    document.getElementById("emiResult").innerHTML =
+    "💰 Monthly EMI: ₹" + emi.toFixed(2) +
+    "<br>💵 Total Interest: ₹" + totalInterest.toFixed(2) +
+    "<br>💳 Total Payment: ₹" + totalPayment.toFixed(2);
 }
 function profit(){
 
