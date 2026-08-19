@@ -211,7 +211,38 @@ Result यहाँ दिखाई देगा
 
 
 <script>
+function calculateEMI(){
 
+let P=Number(document.getElementById("loanAmount").value);
+let annualRate=Number(document.getElementById("interestRate").value);
+let years=Number(document.getElementById("loanYears").value);
+
+if(P<=0 || annualRate<0 || years<=0){
+document.getElementById("emiResult").innerHTML=
+"⚠️ कृपया सही जानकारी भरें";
+return;
+}
+
+let R=annualRate/12/100;
+let N=years*12;
+
+let emi;
+
+if(R===0){
+emi=P/N;
+}else{
+emi=P*R*Math.pow(1+R,N)/
+(Math.pow(1+R,N)-1);
+}
+
+let totalPayment=emi*N;
+let totalInterest=totalPayment-P;
+
+document.getElementById("emiResult").innerHTML=
+"💰 Monthly EMI: ₹"+emi.toFixed(2)+
+"<br>💵 Total Interest: ₹"+totalInterest.toFixed(2)+
+"<br>💳 Total Payment: ₹"+totalPayment.toFixed(2);
+}
 function profit(){
 
 let buy=Number(document.getElementById("buy").value);
