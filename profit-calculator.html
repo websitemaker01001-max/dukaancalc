@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Profit Calculator - Free Online Business Calculator | DukaanCalc</title>
+
+<meta name="description" content="Free profit calculator for shopkeepers and small businesses. Calculate profit, loss and profit margin easily with DukaanCalc.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f6f8;
+color:#111827;
+}
+
+.header{
+background:#111827;
+color:white;
+text-align:center;
+padding:28px 15px;
+}
+
+.header h1{
+margin:0;
+font-size:28px;
+}
+
+.header p{
+margin:8px 0 0;
+}
+
+.container{
+max-width:600px;
+margin:20px auto;
+padding:15px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:18px;
+border-radius:15px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+h2{
+margin-top:0;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:6px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:13px;
+margin-top:15px;
+border:0;
+border-radius:8px;
+background:#2563eb;
+color:white;
+font-size:16px;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:12px;
+background:#f3f4f6;
+border-radius:8px;
+text-align:center;
+line-height:1.7;
+font-weight:bold;
+}
+
+.info{
+background:white;
+padding:20px;
+margin-top:18px;
+border-radius:15px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+line-height:1.7;
+}
+
+.footer{
+text-align:center;
+padding:25px;
+color:#666;
+font-size:13px;
+}
+
+a{
+color:#2563eb;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>💰 Profit Calculator</h1>
+
+<p>Calculate Profit, Loss & Profit Margin</p>
+
+</div>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>Profit Calculator</h2>
+
+<label>Purchase Price (₹)</label>
+
+<input type="number" id="buy" placeholder="500">
+
+<label>Selling Price (₹)</label>
+
+<input type="number" id="sell" placeholder="650">
+
+<button onclick="calculateProfit()">
+Calculate Profit
+</button>
+
+<div class="result" id="result">
+Result यहाँ दिखाई देगा
+</div>
+
+</div>
+
+
+<div class="info">
+
+<h2>What is a Profit Calculator?</h2>
+
+<p>
+A profit calculator helps shopkeepers and small business owners
+calculate how much profit or loss they make when selling a product.
+</p>
+
+<h2>How to Calculate Profit?</h2>
+
+<p>
+Profit is calculated by comparing the selling price with the purchase price.
+If the selling price is higher than the purchase price, you make a profit.
+If it is lower, you make a loss.
+</p>
+
+<h2>Who Can Use This Calculator?</h2>
+
+<p>
+This calculator is useful for shopkeepers, retailers, resellers,
+small businesses, students and anyone who wants to calculate profit quickly.
+</p>
+
+<p>
+<a href="index.html">← Back to DukaanCalc</a>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+
+© 2026 DukaanCalc | Free Business Tools
+
+</div>
+
+
+<script>
+
+function calculateProfit(){
+
+let buy=Number(document.getElementById("buy").value);
+
+let sell=Number(document.getElementById("sell").value);
+
+if(buy<=0 || sell<=0){
+
+document.getElementById("result").innerHTML=
+"⚠️ Please enter valid prices";
+
+return;
+
+}
+
+let difference=sell-buy;
+
+if(difference>0){
+
+let margin=(difference/sell)*100;
+
+document.getElementById("result").innerHTML=
+"✅ Profit: ₹"+difference.toFixed(2)+
+"<br>Profit Margin: "+margin.toFixed(2)+"%";
+
+}
+
+else if(difference<0){
+
+document.getElementById("result").innerHTML=
+"❌ Loss: ₹"+Math.abs(difference).toFixed(2);
+
+}
+
+else{
+
+document.getElementById("result").innerHTML=
+"⚖️ No Profit, No Loss";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
