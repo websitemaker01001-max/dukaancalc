@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DukaanCalc - Business Calculators</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
+}
+
+.header{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.header h1{
+    margin:0;
+    font-size:30px;
+}
+
+.header p{
+    margin:8px 0 0;
+}
+
+.container{
+    max-width:500px;
+    margin:20px auto;
+    padding:15px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:18px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+h2{
+    margin-top:0;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    margin-top:15px;
+    border:0;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.result{
+    margin-top:15px;
+    padding:12px;
+    background:#f3f4f6;
+    border-radius:8px;
+    text-align:center;
+    line-height:1.7;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#666;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🧮 DukaanCalc</h1>
+    <p>Free Business Calculators</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>💰 Profit Calculator</h2>
+
+<label>खरीद कीमत (₹)</label>
+<input type="number" id="buy" placeholder="500">
+
+<label>बिक्री कीमत (₹)</label>
+<input type="number" id="sell" placeholder="650">
+
+<button onclick="profit()">Calculate Profit</button>
+
+<div class="result" id="profitResult">
+Result यहाँ दिखाई देगा
+</div>
+</div>
+
+
+<div class="card">
+<h2>🏷️ Discount Calculator</h2>
+
+<label>Original Price (₹)</label>
+<input type="number" id="price" placeholder="1000">
+
+<label>Discount (%)</label>
+<input type="number" id="discount" placeholder="20">
+
+<button onclick="discountCalc()">Calculate Discount</button>
+
+<div class="result" id="discountResult">
+Result यहाँ दिखाई देगा
+</div>
+</div>
+
+
+<div class="card">
+<h2>🧾 GST Calculator</h2>
+
+<label>Amount (₹)</label>
+<input type="number" id="amount" placeholder="1000">
+
+<label>GST (%)</label>
+<input type="number" id="gst" placeholder="18">
+
+<button onclick="gstCalc()">Calculate GST</button>
+
+<div class="result" id="gstResult">
+Result यहाँ दिखाई देगा
+</div>
+</div>
+
+
+<div class="card">
+<h2>💵 Selling Price Calculator</h2>
+
+<label>Cost Price (₹)</label>
+<input type="number" id="cost" placeholder="500">
+
+<label>Desired Profit (%)</label>
+<input type="number" id="profitPercent" placeholder="20">
+
+<button onclick="sellingPrice()">Calculate Price</button>
+
+<div class="result" id="sellingResult">
+Result यहाँ दिखाई देगा
+</div>
+</div>
+
+
+<div class="card">
+<h2>📊 Daily Profit Calculator</h2>
+
+<label>Total Sales (₹)</label>
+<input type="number" id="sales" placeholder="5000">
+
+<label>Total Expenses (₹)</label>
+<input type="number" id="expenses" placeholder="3000">
+
+<button onclick="dailyProfit()">Calculate</button>
+
+<div class="result" id="dailyResult">
+Result यहाँ दिखाई देगा
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 DukaanCalc | Free Business Tools
+</div>
+
+
+<script>
+
+function profit(){
+
+let buy=Number(document.getElementById("buy").value);
+let sell=Number(document.getElementById("sell").value);
+
+if(buy<=0 || sell<=0){
+document.getElementById("profitResult").innerHTML="⚠️ दोनों कीमतें डालें";
+return;
+}
+
+let difference=sell-buy;
+
+if(difference>0){
+
+let margin=(difference/sell)*100;
+
+document.getElementById("profitResult").innerHTML=
+"✅ Profit: ₹"+difference.toFixed(2)+
+"<br>Margin: "+margin.toFixed(2)+"%";
+
+}else if(difference<0){
+
+document.getElementById("profitResult").innerHTML=
+"❌ Loss: ₹"+Math.abs(difference).toFixed(2);
+
+}else{
+
+document.getElementById("profitResult").innerHTML=
+"⚖️ No Profit, No Loss";
+
+}
+
+}
+
+
+function discountCalc(){
+
+let price=Number(document.getElementById("price").value);
+let discount=Number(document.getElementById("discount").value);
+
+if(price<=0 || discount<0){
+document.getElementById("discountResult").innerHTML="⚠️ सही values डालें";
+return;
+}
+
+let saved=price*discount/100;
+let finalPrice=price-saved;
+
+document.getElementById("discountResult").innerHTML=
+"💰 Discount: ₹"+saved.toFixed(2)+
+"<br>Final Price: ₹"+finalPrice.toFixed(2);
+
+}
+
+
+function gstCalc(){
+
+let amount=Number(document.getElementById("amount").value);
+let gst=Number(document.getElementById("gst").value);
+
+if(amount<=0 || gst<0){
+document.getElementById("gstResult").innerHTML="⚠️ सही values डालें";
+return;
+}
+
+let tax=amount*gst/100;
+let total=amount+tax;
+
+document.getElementById("gstResult").innerHTML=
+"🧾 GST: ₹"+tax.toFixed(2)+
+"<br>Total: ₹"+total.toFixed(2);
+
+}
+
+
+function sellingPrice(){
+
+let cost=Number(document.getElementById("cost").value);
+let percent=Number(document.getElementById("profitPercent").value);
+
+if(cost<=0 || percent<0){
+document.getElementById("sellingResult").innerHTML="⚠️ सही values डालें";
+return;
+}
+
+let profit=cost*percent/100;
+let price=cost+profit;
+
+document.getElementById("sellingResult").innerHTML=
+"💰 Profit: ₹"+profit.toFixed(2)+
+"<br>Selling Price: ₹"+price.toFixed(2);
+
+}
+
+
+function dailyProfit(){
+
+let sales=Number(document.getElementById("sales").value);
+let expenses=Number(document.getElementById("expenses").value);
+
+if(sales<0 || expenses<0){
+document.getElementById("dailyResult").innerHTML="⚠️ सही values डालें";
+return;
+}
+
+let profit=sales-expenses;
+
+if(profit>0){
+
+document.getElementById("dailyResult").innerHTML=
+"✅ Daily Profit: ₹"+profit.toFixed(2);
+
+}else if(profit<0){
+
+document.getElementById("dailyResult").innerHTML=
+"❌ Daily Loss: ₹"+Math.abs(profit).toFixed(2);
+
+}else{
+
+document.getElementById("dailyResult").innerHTML=
+"⚖️ No Profit, No Loss";
+
+}
+
+}
+
+</script>
+
+</body>
+  </html>
