@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Percentage Change Calculator - Free Calculator | DukaanCalc</title>
+<meta name="description" content="Free percentage change calculator to calculate percentage increase or decrease between two values.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8;color:#111827}
+.header{background:#111827;color:white;text-align:center;padding:28px 15px}
+.header h1{margin:0;font-size:28px}.header p{margin:8px 0}
+.container{max-width:600px;margin:20px auto;padding:15px}
+.card,.info{background:white;padding:20px;margin-bottom:18px;border-radius:15px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+label{display:block;margin-top:12px;font-weight:bold}
+input{width:100%;padding:12px;margin-top:6px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+button{width:100%;padding:13px;margin-top:15px;border:0;border-radius:8px;background:#2563eb;color:white;font-size:16px;font-weight:bold}
+.result{margin-top:15px;padding:12px;background:#f3f4f6;border-radius:8px;text-align:center;line-height:1.7;font-weight:bold}
+.info{line-height:1.7}.footer{text-align:center;padding:25px;color:#666;font-size:13px}
+a{color:#2563eb;text-decoration:none;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>📈 Percentage Change Calculator</h1>
+<p>Calculate Percentage Increase or Decrease</p>
+</div>
+
+<div class="container">
+<div class="card">
+<h2>Percentage Change</h2>
+
+<label>Original Value</label>
+<input type="number" id="oldValue" placeholder="100">
+
+<label>New Value</label>
+<input type="number" id="newValue" placeholder="120">
+
+<button onclick="calculate()">Calculate Change</button>
+
+<div class="result" id="result">Result यहाँ दिखाई देगा</div>
+</div>
+
+<div class="info">
+<h2>Percentage Change Formula</h2>
+<p>Percentage Change = (New Value − Original Value) ÷ Original Value × 100.</p>
+<p><a href="index.html">← Back to DukaanCalc</a></p>
+</div>
+</div>
+
+<div class="footer">© 2026 DukaanCalc | Free Business Tools</div>
+
+<script>
+function calculate(){
+let oldValue=Number(document.getElementById("oldValue").value);
+let newValue=Number(document.getElementById("newValue").value);
+
+if(oldValue<=0){
+document.getElementById("result").innerHTML="⚠️ Original value सही डालें";
+return;
+}
+
+let change=((newValue-oldValue)/oldValue)*100;
+let difference=newValue-oldValue;
+
+if(change>0){
+document.getElementById("result").innerHTML=
+"📈 Increase: "+change.toFixed(2)+"%"+
+"<br>Difference: "+difference.toFixed(2);
+}else if(change<0){
+document.getElementById("result").innerHTML=
+"📉 Decrease: "+Math.abs(change).toFixed(2)+"%"+
+"<br>Difference: "+Math.abs(difference).toFixed(2);
+}else{
+document.getElementById("result").innerHTML="⚖️ No Change";
+}
+}
+</script>
+
+</body>
+</html>
