@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EMI Calculator - Free Loan EMI Calculator | DukaanCalc</title>
+<meta name="description" content="Free EMI calculator to calculate monthly loan EMI, total interest and total payment. Easy EMI calculator by DukaanCalc.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8;color:#111827}
+.header{background:#111827;color:white;text-align:center;padding:28px 15px}
+.header h1{margin:0;font-size:28px}
+.header p{margin:8px 0 0}
+.container{max-width:600px;margin:20px auto;padding:15px}
+.card,.info{background:white;padding:20px;margin-bottom:18px;border-radius:15px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+h2{margin-top:0}
+label{display:block;margin-top:12px;font-weight:bold}
+input{width:100%;padding:12px;margin-top:6px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+button{width:100%;padding:13px;margin-top:15px;border:0;border-radius:8px;background:#2563eb;color:white;font-size:16px;font-weight:bold}
+.result{margin-top:15px;padding:12px;background:#f3f4f6;border-radius:8px;text-align:center;line-height:1.7;font-weight:bold}
+.info{line-height:1.7}
+.footer{text-align:center;padding:25px;color:#666;font-size:13px}
+a{color:#2563eb;text-decoration:none;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>🏦 EMI Calculator</h1>
+<p>Calculate Monthly Loan EMI Easily</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>EMI Calculator</h2>
+
+<label>Loan Amount (₹)</label>
+<input type="number" id="loan" placeholder="100000">
+
+<label>Interest Rate (% per year)</label>
+<input type="number" id="rate" placeholder="10">
+
+<label>Loan Tenure (Years)</label>
+<input type="number" id="years" placeholder="5">
+
+<button onclick="calculateEMI()">Calculate EMI</button>
+
+<div class="result" id="result">
+Result यहाँ दिखाई देगा
+</div>
+
+</div>
+
+<div class="info">
+
+<h2>What is EMI?</h2>
+
+<p>
+EMI means Equated Monthly Instalment. It is the fixed amount
+a borrower generally pays every month toward a loan.
+</p>
+
+<h2>How is EMI calculated?</h2>
+
+<p>
+EMI depends mainly on the loan amount, interest rate and loan tenure.
+Enter these values above to estimate your monthly payment.
+</p>
+
+<p>
+<a href="index.html">← Back to DukaanCalc</a>
+</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 DukaanCalc | Free Business Tools
+</div>
+
+<script>
+function calculateEMI(){
+
+let loan=Number(document.getElementById("loan").value);
+let rate=Number(document.getElementById("rate").value);
+let years=Number(document.getElementById("years").value);
+
+if(loan<=0 || rate<0 || years<=0){
+document.getElementById("result").innerHTML="⚠️ Please enter valid values";
+return;
+}
+
+let monthlyRate=rate/12/100;
+let months=years*12;
+let emi;
+
+if(monthlyRate===0){
+emi=loan/months;
+}else{
+emi=loan*monthlyRate*Math.pow(1+monthlyRate,months)/
+(Math.pow(1+monthlyRate,months)-1);
+}
+
+let totalPayment=emi*months;
+let totalInterest=totalPayment-loan;
+
+document.getElementById("result").innerHTML=
+"💰 Monthly EMI: ₹"+emi.toFixed(2)+
+"<br>💵 Total Interest: ₹"+totalInterest.toFixed(2)+
+"<br>💳 Total Payment: ₹"+totalPayment.toFixed(2);
+}
+</script>
+
+</body>
+</html>
