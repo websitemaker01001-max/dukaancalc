@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://websitemaker01001-max.github.io/dukaancalc/</loc>
-  </url>
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/selling-price-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/simple-interest-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/loan-interest-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/break-even-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/markup-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/unit-price-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/average-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/percentage-change-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/salary-calculator.html</loc>
+</url>
+
+<url>
+<loc>https://websitemaker01001-max.github.io/dukaancalc/gst-exclusive-calculator.html</loc>
+</url>
 
 </urlset>
