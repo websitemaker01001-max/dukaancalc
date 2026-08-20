@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Salary Calculator - Daily Salary Calculator | DukaanCalc</title>
+<meta name="description" content="Free salary calculator to calculate daily salary from monthly salary and working days.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8;color:#111827}
+.header{background:#111827;color:white;text-align:center;padding:28px 15px}
+.header h1{margin:0;font-size:28px}.header p{margin:8px 0}
+.container{max-width:600px;margin:20px auto;padding:15px}
+.card,.info{background:white;padding:20px;margin-bottom:18px;border-radius:15px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+label{display:block;margin-top:12px;font-weight:bold}
+input{width:100%;padding:12px;margin-top:6px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+button{width:100%;padding:13px;margin-top:15px;border:0;border-radius:8px;background:#2563eb;color:white;font-size:16px;font-weight:bold}
+.result{margin-top:15px;padding:12px;background:#f3f4f6;border-radius:8px;text-align:center;line-height:1.7;font-weight:bold}
+.info{line-height:1.7}.footer{text-align:center;padding:25px;color:#666;font-size:13px}
+a{color:#2563eb;text-decoration:none;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>💼 Salary Calculator</h1>
+<p>Calculate Daily & Hourly Salary</p>
+</div>
+
+<div class="container">
+<div class="card">
+<h2>Salary Calculator</h2>
+
+<label>Monthly Salary (₹)</label>
+<input type="number" id="salary" placeholder="30000">
+
+<label>Working Days Per Month</label>
+<input type="number" id="days" placeholder="26">
+
+<button onclick="calculate()">Calculate Salary</button>
+
+<div class="result" id="result">Result यहाँ दिखाई देगा</div>
+</div>
+
+<div class="info">
+<h2>About Salary Calculator</h2>
+<p>This calculator estimates daily salary by dividing monthly salary by the number of working days.</p>
+<p><a href="index.html">← Back to DukaanCalc</a></p>
+</div>
+</div>
+
+<div class="footer">© 2026 DukaanCalc | Free Business Tools</div>
+
+<script>
+function calculate(){
+let salary=Number(document.getElementById("salary").value);
+let days=Number(document.getElementById("days").value);
+
+if(salary<=0 || days<=0){
+document.getElementById("result").innerHTML="⚠️ Please enter valid values";
+return;
+}
+
+let daily=salary/days;
+let weekly=daily*7;
+
+document.getElementById("result").innerHTML=
+"💰 Daily Salary: ₹"+daily.toFixed(2)+
+"<br>📅 Approx. 7-Day Earnings: ₹"+weekly.toFixed(2);
+}
+</script>
+
+</body>
+</html>
