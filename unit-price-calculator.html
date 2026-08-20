@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Unit Price Calculator - Free Calculator | DukaanCalc</title>
+<meta name="description" content="Free unit price calculator to calculate the price per unit from total price and quantity.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8;color:#111827}
+.header{background:#111827;color:white;text-align:center;padding:28px 15px}
+.header h1{margin:0;font-size:28px}.header p{margin:8px 0}
+.container{max-width:600px;margin:20px auto;padding:15px}
+.card,.info{background:white;padding:20px;margin-bottom:18px;border-radius:15px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+label{display:block;margin-top:12px;font-weight:bold}
+input{width:100%;padding:12px;margin-top:6px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+button{width:100%;padding:13px;margin-top:15px;border:0;border-radius:8px;background:#2563eb;color:white;font-size:16px;font-weight:bold}
+.result{margin-top:15px;padding:12px;background:#f3f4f6;border-radius:8px;text-align:center;line-height:1.7;font-weight:bold}
+.info{line-height:1.7}.footer{text-align:center;padding:25px;color:#666;font-size:13px}
+a{color:#2563eb;text-decoration:none;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>📏 Unit Price Calculator</h1>
+<p>Calculate Price Per Unit</p>
+</div>
+
+<div class="container">
+<div class="card">
+<h2>Unit Price Calculator</h2>
+
+<label>Total Price (₹)</label>
+<input type="number" id="total" placeholder="500">
+
+<label>Quantity</label>
+<input type="number" id="quantity" placeholder="10">
+
+<button onclick="calculate()">Calculate Unit Price</button>
+
+<div class="result" id="result">Result यहाँ दिखाई देगा</div>
+</div>
+
+<div class="info">
+<h2>What is Unit Price?</h2>
+<p>Unit price tells you how much one item costs when you know the total price and quantity.</p>
+<p><a href="index.html">← Back to DukaanCalc</a></p>
+</div>
+</div>
+
+<div class="footer">© 2026 DukaanCalc | Free Business Tools</div>
+
+<script>
+function calculate(){
+let total=Number(document.getElementById("total").value);
+let quantity=Number(document.getElementById("quantity").value);
+
+if(total<=0 || quantity<=0){
+document.getElementById("result").innerHTML="⚠️ Please enter valid values";
+return;
+}
+
+let unit=total/quantity;
+
+document.getElementById("result").innerHTML=
+"💰 Price Per Unit: ₹"+unit.toFixed(2);
+}
+</script>
+
+</body>
+</html>
